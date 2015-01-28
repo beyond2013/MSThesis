@@ -1,0 +1,29 @@
+\chapter{Conclusion and Future work}
+\section{Conclusion}
+Encapsulating text requires identifying the topic of the document and optimizing the summary such that minimum words are used to represent maximum information. The opposite
+relationship between length(number of words) and information retention makes this task difficult. Results achieved by incorporating simple techniques based on information
+rich sentence location(position hypothesis), and frequency of text features(proper noun phrases), indicate that some text segments (sentences, and phrases) can represent the entire document. 
+These two parameters (position hypothesis, and frequency of text features) frequently conclude by selecting two or more sentences. Method adopted to generate 
+encapsulation relies on tracing, and extracting a specific pattern (chunks corresponding to noun, verb, noun phrases) within sentence, therefore the length of encapsulation
+grows with the number of sentences extracted. On the other hand, utilizing only features and constructing encapsulation(a three words sentence - subject, verb, and object) 
+requires a sophisticated algorithm that could recognize and relate text segments. \\
+Some key observations on evaluation and results include the following:-
+\begin{enumerate}
+ \item Few sentences completely represent the information contained within the document, extracting the noun, verb, noun pattern results in a concise and readable 
+phrase but ignoring other parts of the sentence causes encapsulation to be incomplete.
+ \item Sentences of the corpus span multiple clauses, containing subject, verb and object at unusual positions. Encapsulation method would not come up with a
+readable phrase for such sentences.
+\end{enumerate}
+
+\section{Future work}
+This results obtained through experiments have showed that frequent text features can assist in identifying important information for generating concise text 
+representation, however more corpus specific features (e.g. text in quotation marks, facts presented as numeric values) and cue phrases can be used in addition to
+improve topic identification. \\
+In order to improve encapsulations two possibilities can be explored:-
+\begin{enumerate}
+ \item classification of sentences in different categories so that each type is dynamically encapsulated using appropriate method, rather than statically using
+ noun-verb-noun patterns
+ \item identifying text segments based on new features as mentioned above that must be retained to provide more complete and readable encapsulations. 
+ \item identifying a reliable data set for evaluating encapsulation.
+\end{enumerate}
+Incorporating methods that can discover semantics in text, and smart sentence compression algorithm can further improve the system.

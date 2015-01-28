@@ -1,0 +1,87 @@
+\documentclass[a4paper]{aitthesis}
+
+\usepackage{graphicx}
+\usepackage{latexsym} 
+\usepackage{amssymb,amsthm,amsmath}
+\usepackage[linktoc=page]{hyperref}
+\usepackage{longtable}
+%\usepackage{longtable,booktabs}
+\usepackage{apacite}
+%\usepackage[notocbib]{apacite}
+\usepackage{verbatim}
+%\usepackage{multirow}
+\usepackage{subfigure}
+%\usepackage[ruled,longend]{algorithm2e}
+%\usepackage{algorithmic}
+\usepackage{bm}
+\usepackage{url}
+%\usepackage{natbib}
+%\usepackage{placeins}
+\usepackage{amssymb, amsmath}
+%\newcommand{\oops}[1]{\bf{#1}}
+%\newcommand{\ga}{\bar{\gamma}}
+%\newcommand{\myint}{\int_0^{\infty}}
+%\newcommand{\mat}[1]{\mathtt{#1}}
+%\renewcommand{\vec}[1]{\boldsymbol{#1}}
+\newcommand\T{\rule{0pt}{2.6ex}}
+\newcommand\B{\rule[-1.2ex]{0pt}{0pt}}
+%\DeclareCaptionLabelSeparator{colon}{ } the line i commented later ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+%\DeclareMathOperator*{\atan2}{atan2}
+
+%\linespread{0.5}
+%%%%%%%%%%%
+\numberwithin{equation}{subsection}
+%\renewcommand{\type}{Special Study Report}
+
+%\renewcommand{\vec}[1]{\boldsymbol{#1}}
+%\newcommand{\mat}[1]{\mathtt{#1}}
+%\def\Rset{\mathbb{R}}
+%\DeclareMathOperator*{\argmax}{argmax}
+%\DeclareMathOperator*{\argmin}{argmin}
+%\DeclareMathOperator*{\sign}{sign}
+%\def\norm{\mbox{$\cal{N}$}}
+
+%%%%%%%%%%%
+
+%\renewcommand{\degree}{Doctor of Computer Science}	
+
+\graphicspath{{./Figure/}}
+%%%%%%%%%%%
+\begin{document}
+ \pagenumbering{roman}
+ \pagestyle{plain}
+ \include{frontstuff}
+  
+ \pagenumbering{arabic}
+ \setlength{\headheight}{12pt}
+ \pagestyle{plain}
+ %\include{ack}
+ 
+
+%  \begin{abstract}
+  
+  %----------------------------------------------------------------------
+  % Do not alter the following two lines
+%  \end{abstract}
+
+\include{chap1}
+\include{ch2}
+\include{ch3}
+\include{ch4}
+\include{chap5}
+\include{ch6}
+%\addcontentsline{toc}{chapter}{ \hskip 4em References}
+%\include{report}
+
+
+
+%\begin{thebibliography}{99}
+%\bibliographystyle{apacite}
+% \bibliography{report}
+% \end{thebibliography}
+
+\bibliographystyle{apacite}
+\bibliography{reference}
+\theappendix
+\include{app}
+\end{document}

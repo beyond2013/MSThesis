@@ -1,0 +1,61 @@
+\chapter{Literature Review}
+Literature on generating and evaluating summaries (using extraction)  includes a variety of techniques and algorithms. Although the approaches to summarize 
+text utilize different data structures and corpus, most of them try to identify key features present in text. Generally, all systems proposed for extractive summarization
+encompass the process of selecting key terms, assigning weights to term, aggregating term weights to obtain sentence weight, and rearranging the sentences 
+to produce summary.
+
+\citeA{kupiec-train} describe a method that is able to learn from data. The classification function categorizes each sentence as worthy of extraction 
+or not, using a naive-Bayes classifier. Let s be a particular sentence, S the set of sentences that make up the summary, and $F_{1} , . . . , F_{k}$ the features.
+Assuming independence of the features:
+ \begin{displaymath}
+  P(s \in S \mid F_{1},F_{2} \ldots F_{k}) = \frac{\Pi_{i=1}^k P(F_{i} \mid s\in S ) . P(s\in S)}{\Pi_{i=1}^k P(F_{i})}
+ \end{displaymath}
+Each sentence was scored according to the above equation, and top n sentences were extracted. A corpus of technical documents was used to evaluate the system.
+The authors manually analyzed the match between the manual abstracts and the actual document and created a mapping. This mapping was used to evaluate auto-extracts.\\
+
+\citeA{Rama-Structure} 
+emphasized the importance of document structure, and presented a method to create query-specific summaries by extracting associations between their
+fragments. They represented a document by a weighted graph, nodes of the graph are text fragments(paragraphs), weights were assigned based on traditional Information
+Retrieval(IR) weighting formulas. They suggested the summary of a document to be the minimum spanning tree on the corresponding document graph that contains all the 
+keywords or equivalent based on thesaurus. For generating query specific summaries, each node of the precomputed document graph for a document was scored according
+to IR ranking functions. The best summary was obtained by the top-ranked spanning tree that possessed all the keywords.
+The ranking considered both the node and the edge weight.\\
+
+\citeA{Nenkova-newswire}
+ published an overview of the results achieved in different type of summarization tasks(single document summarization, multi document summarization,
+summarization focused by question and headline generation). Results of his analysis of variance model revealed that most progress has been made in generic multi document
+summarization and the most challenging task is to produce user focused summary in answer to a question or topic. He also discovered from the analysis that single document
+summarization systems are further from human performance, than in the multi document summarization systems. He pointed out that only coverage and few other metrics have 
+been used to evaluate summarization systems, with little attention paid on coherence and cohesion. He remarked that no systematic study had been done to identify types 
+of input (whether easy, or hard); which could assists in development of more specialized summarizers.\\
+
+\citeA{Svore-RankNet}
+ proposed an algorithm based on Neural Nets and the use of third party datasets to deal with the problem of extractive summarization, outperforming 
+the baseline with statistical significance. The authors used a dataset containing 1365 documents gathered from CNN.com,each consisting of the title, time stamp, three or 
+four human generated story highlights and the article text. They considered the task of creating three machine highlights. The human generated highlights were not 
+verbatim extractions from the article itself. The authors evaluated their system using two metrics: the first one concatenated the three highlights produced by the system,
+concatenated the three human generated highlights, and compared these two blocks; the second metric considered the ordering and compared the sentences on an individual 
+level.\\
+
+\citeA{siddiqui-multilingual}
+ described language independent, generic, extractive summarization algorithm for single document. For determining content rich sentences 
+they constructed various(noun/proper noun, document feature, and enhanced theme feature) vectors. They suggested that noun and proper noun are content rich and easy to find. 
+document feature vector was constructed using the threshold as 30\% of the highest frequency. To determine the central theme of the document the authors proposed the theme 
+feature vector which contains the union of frequent terms from the title and frequent proper nouns. Sentence weight is calculated as a summation of document feature vector,
+and theme feature vector. The sentence weight was computer by aggregating those sentence terms, which belong to the document feature vector and the theme feature vector. 
+The risk of extracting incomplete sentence(sentence referring to previous sentence) was tackled by computing Sentence Reference Index (SRI). Authors assumed that
+important information may exist anywhere in the document and divided the document into number of partitions depending upon the length of summary to be 
+generated. From each partition highest weight sentences were selected. If the sentence made reference to previous sentence and the length of summary allowed
+inclusion, previous sentence was included in the summary otherwise it was dropped. Some post processing was also applied on the summary extracted by adding or
+dropping sentences in order to make it coherent. The evaluation of suggested algorithm produced satisfactory results equally for English documents as well as 
+Hindi, Gujarati and Urdu. \\
+
+\citeA{Ledeneval-FreqSequences}
+ showed that words that are parts of bigrams that repeat more than once in text are good terms to describe the text's contents. 
+They also emphasized that only the maximal frequent sequences bear important meaning and can express ideas both important and specific for the document. Authors adopted
+a very straight forward and logical algorithm for their experiments. In first step key terms were selected to decide which features are to be used to describe the 
+sentences. Next, term weights were calculated to decide how important each feature is. Sentence weight was obtained by combining the key term weights for the sentence. 
+Sentence selection involved deciding which sentences should be selected as part of summary. The proposed method outperformed most state of the  art methods. 
+For few experiments the results were even better than the baseline method(first line of the first paragraph). 
+
+\clearpage 
